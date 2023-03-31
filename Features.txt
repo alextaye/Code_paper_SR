@@ -1,0 +1,109 @@
+Age group
+Female
+Education
+region
+Poor
+Single
+Married but living apart
+Married and cohabiting
+Full-time
+Part-time
+Retired
+Unemployed
+hospitalized
+medication
+Past alcohol consumption
+Current alcohol consumption
+Obese or overweight
+Normal weight
+Underweight
+Smoker
+Health conditions: disahome
+Health conditions: pchronic
+Health conditions: other
+Health conditions: cancer
+Health conditions: diabetes
+Health conditions: heart
+Health conditions: HBP
+Health conditions: pregnant
+Health conditions: lung
+Health conditions: none
+Health conditions: pollen
+Pastmd_adjust
+Pastmd_agora
+Pastmd_abuse
+Pastmd_dependence
+Pastmd_anorexia
+Pastmd_binge
+Pastmd_Bulimia
+Pastmd_anxiety
+Pastmd_hypo
+Pastmd_depression
+Pastmd_none
+Pastmd_other
+Pastmd_panic
+Pastmd_ptsd
+Pastmd_somato
+Pastmd_phobia
+currentmd_adjust
+currentmd_agora
+currentmd_abuse
+currentmd_dependence
+currentmd_anorexia
+currentmd_binge
+currentmd_Bulimia
+currentmd_anxiety
+currentmd_hypo
+currentmd_depression
+currentmd_none
+currentmd_other
+currentmd_panic
+currentmd_ptsd
+currentmd_somato
+currentmd_phobia
+Tested_Negative
+Tested_Not
+Tested_Positive
+Population density
+Housing overcrowding
+Access to open-air: balcony
+Access to open-air: none
+Access to open-air: park
+Access to open-air: Garden
+Access to open-air: Terrace
+Works in Energy and oil
+Works in essential public services
+Works in finance and insurance services
+Works in health service
+Works in other services
+Works in the food sector
+Works in transport services
+Works in wast removal services
+Works in water distribution
+Type of place: flat
+Type of place: house
+Type of place: lodger
+Type of place: other
+Type of place: retirement home
+Type of place: student accommodation
+Stringency index
+Total COVID-19 cases
+New COVID-19 cases
+Total deaths from COVID-19
+New deaths from COVID-19
+Confidence in government
+Confidence in health services
+Confidence in essentials
+Knowledge about COVID-19
+Working cond. havn't changed
+Now working at home
+chg_occupation
+chg_resume
+chg_earnless
+chg_earnmore
+chg_lostjob
+chg_cross
+chg_newwork
+chg_leave
+chg_workmore
+chg_workless
