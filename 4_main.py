@@ -10,29 +10,32 @@ from 3_empirical_tuning import *
 
 RandomState = 2446
 
-best_params
 # fit optimised RF and baseline OLS 
 #-------------------------
-param_grid_ = {"max_features":range(1,115), 
-                "max_depth": range(1,40), 
-                }
-
-rf_ =     RandomForestRegressor(n_estimators = 500,
+rf_pooled =     RandomForestRegressor(n_estimators = 500,
                                 criterion    = 'mse', 
-                                max_depth    = 
-                                max_features = 
+                                max_depth    = best_params.max_depth, 
+                                max_features = best_params.max_features
                                 n_jobs       = -1,
                                 random_state = RandomState,
-                                verbose      = 1)
+                                      
+                                verbose      = 1).fit(Trn[features], Trn['CBS_reason_mean'].ravel())
 
-Pooled_opt = GridSearchCV(estimator          = rf_,
-                          param_grid         = param_grid_, 
-                          cv                 = 3, 
-                          return_train_score = True, 
-                          scoring            = "neg_root_mean_squared_error",
-                            n_jobs             = -1,
-                          verbose             = 1, 
-                          refit              = True
-                          ).fit(Trn.drop(columns = drop_), Trn['CBS_reason_mean'].ravel())
+Ols_pooled = LinearRegression().fit(Trn[features], Trn['CBS_reason_mean'].ravel())
 
-# Ols = LinearRegression().fit(Trn.drop(columns = drop_), Trn['CBS_reason_mean'].ravel())
+# Evaluate 
+Evaluate(model = Ols, data = DF)
+Evaluate(model = rf_pooled, data = DF)
+
+# Post-training  
+explainer_ = shap.TreeExplainer(rf_pooled) 
+shap_values_ = explainer_.shap_values(Trn[features])  
+shap_interaction_values = explainer_.shap_interaction_values(Trn[features])
+permut_ = permutation_importance(rf_pooled,
+                                  X = Trn[features], 
+                                  y = Trn["CBS_reason_mean"],
+                                  n_repeats    =  200,
+                                  n_jobs       =  -1,
+                                  random_state = RandomState)
+ 
+  
