@@ -4,8 +4,8 @@
 @author: alemayehu taye
 """
 
-from version_control_1 import *
-from data_2 import *
+from 1_version_control import *
+from 2_data import *
 RandomState = 2446
 
 
