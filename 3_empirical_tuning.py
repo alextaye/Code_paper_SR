@@ -28,9 +28,9 @@ def cv_results(model):
 
 # grid space 
 param_grid_rf = {
-                  "max_features": range(1, 35), 
-                  "max_depth": range(1, 35)
-                 }
+                  "max_features":range(1,115), 
+                  "max_depth": range(1,40), 
+                }
 
 rf_ =     RandomForestRegressor(n_estimators = 500,
                                 criterion    = 'mse', 
