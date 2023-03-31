@@ -14,6 +14,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.model_selection import GridSearchCV 
 from sklearn.linear_model import LinearRegression
 from sklearn.ensemble import RandomForestRegressor
+from sklearn.inspection import permutation_importance
 
 #### Evaluation metrics
 from sklearn.metrics import r2_score, 
