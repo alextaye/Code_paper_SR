@@ -1,7 +1,6 @@
 Age group
 Female
 Education
-region
 Poor
 Single
 Married but living apart
