@@ -6,6 +6,7 @@
 import pandas as pd
 import numpy as np
 import scipy as sp
+import matplotlib.pyplot as plt
 import time
 import sys
 import os
@@ -15,6 +16,7 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.linear_model import LinearRegression
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.inspection import permutation_importance
+import shap
 
 #### Evaluation metrics
 from sklearn.metrics import r2_score, 
