@@ -32,7 +32,26 @@ DatasetPath = " "
 ResultPath = ""
 
 #### Define important functions
+
 #### 1)
+def Evaluate(model, data): 
+     Trn, Tst        = train_test_split(data,
+                                     test_size    = 0.2, 
+                                     random_state = RandomState)
+     y = "CBS_reason_mean"
+     X = list(data.drop(columns = drop))
+     index = ["R2", "RMSE", "MAE", "MAPE"]
+     Prediction_test  = model.predict(Tst[X])
+     Prediction_train = model.predict(Trn[X])
+     Rmse_test  =  np.sqrt(mean_squared_error(Tst[y], Prediction_test)).round(3)
+     Rmse_train =  np.sqrt(mean_squared_error(Trn[y], Prediction_train)).round(3)
+     Mae_test  = mean_absolute_error(Tst[y], Prediction_test).round(3)
+     Mae_train = mean_absolute_error(Trn[y], Prediction_train).round(3)
+     stats_test = [Rmse_test, Mae_test]
+     stats_train = [Rmse_train, Mae_train] 
+     return pd.DataFrame({"Testset": stats_test, "Trainset": stats_train}, index =index).T
+
+#### 2)
 def shap_sum_plot(shap_values_, DF, save_name, max_feature = 25, figsize = (15, 15)):
   ## shap_values_ takes SHAP values, DF takes dataset used to compute the SHAP, save_name takes string name.
     plt.close()
@@ -62,7 +81,7 @@ def shap_sum_plot(shap_values_, DF, save_name, max_feature = 25, figsize = (15, 
             orientation = 'portrait', 
             bbox_inches="tight")
     
-    #### 2)
+    #### 3)
     def Shap_corr(shap_values_, DF, max_feature, figsize, save_name):
     shap_vvv = pd.DataFrame(shap_values_)
     dff      = DF
