@@ -5,7 +5,7 @@
 """
 
 
-from version_control_1 import *
+from 1_version_control import *
 RandomState = 2446
 
 # importing and splitting the data 
